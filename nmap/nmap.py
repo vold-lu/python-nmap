@@ -65,8 +65,8 @@ except ImportError:
 
 
 __author__ = 'Alexandre Norman (norman@xael.org)'
-__version__ = '0.6.3'
-__last_modification__ = '2018/09/23'
+__version__ = '0.6.4'
+__last_modification__ = '2020.02.28'
 
 
 ############################################################################

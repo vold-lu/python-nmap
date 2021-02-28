@@ -204,3 +204,20 @@ print('----------------------------------------------------')
 nm = nmap.PortScannerYield()
 for progressive_result in nm.scan('127.0.0.1/24', '22-25'):
     print(progressive_result)
+
+
+print('----------------------------------------------------')
+# Using a timeout decorator and custom exceptiom
+
+
+class MyException(nmap.TimeoutException):
+    pass
+
+
+try:
+    with nmap.TimeoutAfter(timeout=1, exception=MyException):
+        nm = nmap.PortScanner()
+        nm.scan('127.0.0.1', '22-40043')
+        print(nm.all_hosts())
+except nmap.TimeoutException:
+    print('Timeout reached')

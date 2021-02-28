@@ -176,6 +176,29 @@ Using a Scanner Async
 See also example.py in archive file.
 
 
+
+Using a timeout
+---------------
+
+
+.. code-block:: python
+                
+    >>> try:
+    >>>     with nmap.TimeoutAfter(timeout=1):
+    >>>         nm = nmap.PortScanner()
+    >>>         nm.scan('127.0.0.1', '22-40043')
+    >>>         print(nm.all_hosts())
+    >>> except nmap.TimeoutException:
+    >>>     print('Timeout reached')
+    >>>
+    Timeout reached
+
+The `TimeoutAfter` decorator takes the following arguments :
+
+- `timeout`: (int) timeout duration in seconds
+- `exception`: (Exception) custom exception to raise on timeout. Default is `nmap.TimeoutException`
+    
+
 Contributors
 ============
 

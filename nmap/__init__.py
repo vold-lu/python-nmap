@@ -38,7 +38,30 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from .nmap import *  # noqa
-from .nmap import __author__  # noqa
-from .nmap import __version__  # noqa
-from .nmap import __last_modification__  # noqa
+
+from .nmap import PortScanner
+from .nmap import PortScannerAsync
+from .nmap import PortScannerError
+from .nmap import PortScannerHostDict
+from .nmap import PortScannerYield
+from .nmap import __author__
+from .nmap import __last_modification__
+from .nmap import __version__
+from .nmap import convert_nmap_output_to_encoding
+from .timeout import TimeoutAfter
+from .timeout import TimeoutException
+
+
+__all__ = [
+    "PortScanner",
+    "PortScannerAsync",
+    "PortScannerYield",
+    "PortScannerHostDict",
+    "PortScannerError",
+    "convert_nmap_output_to_encoding",
+    "__author__",
+    "__last_modification__",
+    "__version__",
+    "TimeoutAfter",
+    "TimeoutException",
+]
