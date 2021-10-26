@@ -20,7 +20,7 @@ clean-build:
 	@rm -fr *.egg-info
 
 manifest:
-	@python setup.py sdist --manifest-only
+	@python3 setup.py sdist --manifest-only
 
 tox:
 	@tox
