@@ -1,7 +1,7 @@
 # python-nmap Makefile
 
-VERSION=`python setup.py -q version`
-ARCHIVE=`python setup.py --fullname`
+VERSION=`python3 setup.py -q version`
+ARCHIVE=`python3 setup.py --fullname`
 
 clean: clean-eggs clean-build
 	@find . -iname '*.pyc' -delete
