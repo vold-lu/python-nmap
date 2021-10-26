@@ -56,7 +56,7 @@ register:
 	@python3 setup.py sdist upload
 
 doc:
-	@pydoc3 -w nmap/nmap.py
+	@pydoc3.9 -w nmap/nmap.py
 	@cd docs && make html
 
 web:
