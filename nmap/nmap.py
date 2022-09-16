@@ -456,6 +456,7 @@ class PortScanner(object):
                 reason = dport.find("state").get("reason")
                 # name, product, version, extra info and conf if any
                 name = product = version = extrainfo = conf = cpe = ""
+                cpes = []
                 for dname in dport.findall("service"):
                     name = dname.get("name")
                     if dname.get("product"):
@@ -469,6 +470,8 @@ class PortScanner(object):
 
                     for dcpe in dname.findall("cpe"):
                         cpe = dcpe.text
+                        cpes.append(dcpe.text)
+
                 # store everything
                 if proto not in list(scan_result["scan"][host].keys()):
                     scan_result["scan"][host][proto] = {}
@@ -482,6 +485,7 @@ class PortScanner(object):
                     "extrainfo": extrainfo,
                     "conf": conf,
                     "cpe": cpe,
+                    "cpes": cpes,
                 }
                 script_id = ""
                 script_out = ""
